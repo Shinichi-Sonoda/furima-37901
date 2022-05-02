@@ -27,7 +27,7 @@ has_many :orders
 | category_id               | integer    | null: false                    |
 | condition_id              | integer    | null: false                    |
 | shipping_fee_condition_id | integer    | null: false                    |
-| item_address_id           | integer    | null: false                    |
+| prefecture_id             | integer    | null: false                    |
 | lead_time_id              | integer    | null: false                    |
 | price                     | integer    | null: false                    |
 | user                      | references | null: false, foreign_key: true |
@@ -47,6 +47,7 @@ has_one :order
 | house_number  | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
+| order         | references | null: false, foreign_key: true |
 
 ### Association
 
