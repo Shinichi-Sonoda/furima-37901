@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -19,4 +17,6 @@ class User < ApplicationRecord
   { with: /\A[\p{katakana}ー－&&[^ -~｡-ﾟ]]+\z/,
     message: 'is invalid. Input full-width katakana characters. ' }
   validates :birthday, presence: true
+
+  has_many :items
 end
