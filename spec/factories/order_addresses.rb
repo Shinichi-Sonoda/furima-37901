@@ -9,9 +9,5 @@ FactoryBot.define do
     item_id { '1' }
     user_id { '1' }
     token { 'tok_64a34fcaa90e5a9c1097f10d2944' }
-    number { '4242424242424242' }
-    exp_month { '12' }
-    exp_year { '31' }
-    cvc { '123' }
   end
 end
