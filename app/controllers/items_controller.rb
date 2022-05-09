@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
   before_action :search_item, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :udpate, :destroy]
 
-
-
   def index
     @items = Item.all.order('created_at DESC')
   end
@@ -26,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if @item.order.present?
   end
 
   def update
@@ -55,6 +54,4 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to root_path unless @item.user == current_user
   end
-
-
 end
